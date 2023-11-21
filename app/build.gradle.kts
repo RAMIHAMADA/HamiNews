@@ -36,6 +36,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -48,7 +52,14 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
+    // Lottie
+    implementation("com.airbnb.android:lottie:6.0.0")
+
+    // ViewBinding
+    implementation("com.github.kirich1409:viewbindingpropertydelegate:1.5.9")
+
     // Lifecycle
+    // ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
