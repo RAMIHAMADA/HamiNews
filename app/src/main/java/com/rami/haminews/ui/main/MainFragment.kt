@@ -16,6 +16,5 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     private val viewModel by viewModels<MainViewModel>()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.all
     }
 }
