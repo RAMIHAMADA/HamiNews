@@ -11,6 +11,7 @@
         android:id="@+id/article_image"
         android:layout_width="88dp"
         android:layout_height="84dp"
+        android:background="@drawable/bg_image_10"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,7 +41,7 @@
             android:ellipsize="end"
             android:maxLines="3"
             android:textColor="@color/gray_black"
-            android:textFontWeight="700"
+            android:fontWeight="700"
             android:textSize="12sp"
             android:textStyle="bold"
             toolse:text="Тут будет заголовок новости  " />
