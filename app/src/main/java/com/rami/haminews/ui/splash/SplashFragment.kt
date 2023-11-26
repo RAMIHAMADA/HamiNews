@@ -26,6 +26,6 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
     }
 
     private fun startApp() {
-        findNavController().navigate(R.id.action_splashFragment_to_mainFragment)
+        findNavController().navigate(R.id.action_splashFragment_to_tabsFragment)
     }
 }

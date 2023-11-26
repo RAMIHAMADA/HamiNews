@@ -4,4 +4,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="my_news">My news</string>
     <string name="popular_news">Popular news</string>
+    <string name="search">Search</string>
 </resources>
