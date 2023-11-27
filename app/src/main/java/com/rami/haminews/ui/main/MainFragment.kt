@@ -3,8 +3,10 @@ package com.rami.haminews.ui.main
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.rami.haminews.R
@@ -21,6 +23,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
+        setOnItemClickListener()
         initObserver()
     }
 
@@ -53,6 +56,16 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         binding.newsAdapterRv.apply {
             adapter = newsAdapter
             layoutManager = LinearLayoutManager(activity)
+        }
+    }
+
+    private fun setOnItemClickListener() {
+        newsAdapter.setOnItemClickListener {
+            val bundle = bundleOf("article" to it)
+            view?.findNavController()?.navigate(
+                R.id.action_mainFragment_to_detailsFragment,
+                bundle,
+            )
         }
     }
 }

@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.util.Util
 import com.rami.haminews.databinding.ItemArticleBinding
 import com.rami.haminews.models.Article
 
@@ -42,14 +41,21 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
             articleTitle.text = article.title
             articleDate.text = article.publishedAt
         }
+
+        holder.itemView.setOnClickListener {
+            onItemClickListener?.let {
+                it(article)
+            }
+        }
     }
 
     override fun getItemCount(): Int {
         return differ.currentList.size
     }
 
-    private var onItemClickListener: ((Article) -> Util)? = null
-    fun setOnItemClickListener(listener: (Article) -> Util) {
+    private var onItemClickListener: ((Article) -> Unit)? = null
+
+    fun setOnItemClickListener(listener: (Article) -> Unit) {
         onItemClickListener = listener
     }
 }

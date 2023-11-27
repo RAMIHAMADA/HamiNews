@@ -6,9 +6,13 @@
     app:startDestination="@id/mainFragment">
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.rami.haminews.ui.detalis.DetailsFragment"
+        android:name="com.rami.haminews.ui.details.DetailsFragment"
         android:label="fragment_detalis"
-        tools:layout="@layout/fragment_detalis" />
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="article"
+            app:argType="com.rami.haminews.models.Article" />
+    </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.rami.haminews.ui.favorite.FavoriteFragment"
